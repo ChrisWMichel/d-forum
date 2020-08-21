@@ -1,0 +1,77 @@
+<template>
+    <div class="container">
+        <v-card>
+            <v-app-bar
+                absolute
+                color="primary"
+                dark
+            >
+                <!--                <v-app-bar-nav-icon></v-app-bar-nav-icon>-->
+
+                <v-toolbar-title>
+                    <router-link style="color: white; text-decoration: none" :to="{name:'home'}">D-Forum</router-link>
+                </v-toolbar-title>
+
+                <v-spacer></v-spacer>
+                <p class="mt-4 mr-4">{{user.email}}</p>
+
+                <v-btn class="btn-style" v-if="!isLoggedIn">
+                    <router-link class="nav-style" :to="{name:'login'}">Login</router-link>
+                </v-btn>
+               <!-- <v-btn class="btn-style" v-if="!isLoggedIn">
+                    <router-link class="nav-style" :to="{name:'register'}">Register</router-link>
+                </v-btn>-->
+                <v-btn class="btn-style" v-if="isLoggedIn">
+                    <a class="nav-style" href="#" @click="logout">Logout</a>
+                </v-btn>
+                <!-- <v-btn icon>
+                     <v-icon>mdi-dots-vertical</v-icon>
+                 </v-btn>-->
+            </v-app-bar>
+        </v-card>
+    </div>
+</template>
+
+<script>
+//import {mapState} from 'vuex';
+export default {
+    name: "AppNavbar",
+    data(){
+        return {
+            //user: this.$store.getters.getUser,
+           // isLoggedIn: this.$store.state.isLoggedIn
+        }
+    },
+    created() {
+        //console.log('loggedIn', this.isLoggedIn)
+    },
+    computed:{
+        user(){
+            return this.$store.getters.getUser
+        },
+        isLoggedIn(){
+            return this.$store.getters.loggedIn
+        }
+    },
+    methods:{
+        async logout(){
+            try{
+                await axios.post("/logout");
+                this.$store.dispatch('logout');
+                this.$router.push({name:'login'})
+            } catch (err) {
+                console.log(err.response.status);
+            }
+        }
+    }
+}
+</script>
+
+<style scoped>
+    .nav-style{
+        text-decoration: none;
+    }
+    .btn-style{
+        margin-right: 10px;
+    }
+</style>
