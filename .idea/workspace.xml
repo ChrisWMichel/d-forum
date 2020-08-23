@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="07da62ed-3e62-4e59-8b84-026dfe7d5987" name="Default Changelist" comment="Completed structure of app.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/QuestionResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ReplyResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../XForum/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../XForum/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XForum/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../XForum/app/Http/Controllers/ReplyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/QuestionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/QuestionResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Like.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -204,7 +213,7 @@
       <workItem from="1597936257174" duration="15839000" />
       <workItem from="1598013154216" duration="22028000" />
       <workItem from="1598103195198" duration="1009000" />
-      <workItem from="1598187705615" duration="2243000" />
+      <workItem from="1598187705615" duration="13859000" />
     </task>
     <task id="LOCAL-00001" summary="Completed structure of app.">
       <created>1598039038808</created>
@@ -241,14 +250,14 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1334" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1597783127574" />
-    <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598188429230">
+    <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598207012603">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598188429230" />
-    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598023106282">
+    <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598207012603" />
+    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598207377504">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598023106282" />
+    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598207377504" />
     <state x="-1342" y="75" key="CommitChangelistDialog2" timestamp="1598041221419">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
@@ -257,22 +266,22 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1142" y="295" key="FileChooserDialogImpl/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1597861692512" />
-    <state width="1664" height="196" key="GridCell.Tab.0.bottom" timestamp="1598128141081">
+    <state width="1664" height="196" key="GridCell.Tab.0.bottom" timestamp="1598209594440">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598128141081" />
-    <state width="1664" height="196" key="GridCell.Tab.0.center" timestamp="1598128141081">
+    <state width="1664" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594440" />
+    <state width="1664" height="196" key="GridCell.Tab.0.center" timestamp="1598209594439">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598128141081" />
-    <state width="1664" height="196" key="GridCell.Tab.0.left" timestamp="1598128141080">
+    <state width="1664" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
+    <state width="1664" height="196" key="GridCell.Tab.0.left" timestamp="1598209594439">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598128141080" />
-    <state width="1664" height="196" key="GridCell.Tab.0.right" timestamp="1598128141081">
+    <state width="1664" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
+    <state width="1664" height="196" key="GridCell.Tab.0.right" timestamp="1598209594439">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598128141081" />
+    <state width="1664" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
     <state x="-1346" y="280" key="IDE.errors.dialog" timestamp="1598039118282">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
@@ -281,9 +290,9 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1319" y="238" width="766" height="560" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598039090227" />
-    <state x="-1248" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598042050297">
+    <state x="-1248" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598205403600">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1248" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598042050297" />
+    <state x="-1248" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598205403600" />
   </component>
 </project>

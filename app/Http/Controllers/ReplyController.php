@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReplyResource;
+use App\Models\Question;
 use App\Models\Reply;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ReplyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Question $question)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return ReplyResource::collection($question->replies);
     }
 
     /**
@@ -33,32 +25,24 @@ class ReplyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Question $question, Request $request)
     {
-        //
+        $reply = $question->replies()->create($request->all());
+
+        return response(['reply' => new ReplyResource($reply)], Response::HTTP_ACCEPTED );
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Question $question, Reply $reply)
     {
-        //
+        //return new ReplyResource($question->replies);
+        return  new ReplyResource($reply);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Reply $reply)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -67,9 +51,10 @@ class ReplyController extends Controller
      * @param  \App\Models\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Question $question, Request $request, Reply $reply)
     {
-        //
+        $reply->update($request->all());
+        return response('Updated', Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -78,8 +63,9 @@ class ReplyController extends Controller
      * @param  \App\Models\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Question $question, Reply $reply)
     {
-        //
+        $reply->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
