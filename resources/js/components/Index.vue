@@ -3,17 +3,20 @@
     <div>
         <app-navbar></app-navbar>
 
-        <v-container style="margin-top: 5%; max-width: 1200px; align-content: center">
+        <v-container fluid grid-list-md style="margin-top: 5%; max-width: 1200px; align-content: center">
             <router-view></router-view>
         </v-container>
+
+        <app-footer></app-footer>
     </div>
 </template>
 
 <script>
 import AppNavbar from "./home/AppNavbar";
+import AppFooter from "./home/AppFooter";
 export default {
     name: "Index",
-    components: {AppNavbar}
+    components: {AppFooter, AppNavbar}
 }
 </script>
 

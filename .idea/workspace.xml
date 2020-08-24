@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07da62ed-3e62-4e59-8b84-026dfe7d5987" name="Default Changelist" comment="Completed structure of app.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ReplyResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forum/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forum/Question.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forum/Read.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forum/ShowQuestion.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/home/AppFooter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../XForum/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../XForum/app/Http/Controllers/QuestionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../XForum/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../XForum/app/Http/Controllers/ReplyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XForum/resources/js/components/forum/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../XForum/resources/js/components/forum/create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/QuestionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/QuestionResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Like.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/home/AppHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/home/AppHome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/home/AppNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/home/AppNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/modules/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +226,8 @@
       <workItem from="1597936257174" duration="15839000" />
       <workItem from="1598013154216" duration="22028000" />
       <workItem from="1598103195198" duration="1009000" />
-      <workItem from="1598187705615" duration="13859000" />
+      <workItem from="1598187705615" duration="14618000" />
+      <workItem from="1598273654088" duration="21437000" />
     </task>
     <task id="LOCAL-00001" summary="Completed structure of app.">
       <created>1598039038808</created>
@@ -266,22 +280,26 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1142" y="295" key="FileChooserDialogImpl/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1597861692512" />
-    <state width="1664" height="196" key="GridCell.Tab.0.bottom" timestamp="1598209594440">
+    <state x="-1920" y="10" key="FileDocumentManager.FileCacheConflict" timestamp="1598285386345">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594440" />
-    <state width="1664" height="196" key="GridCell.Tab.0.center" timestamp="1598209594439">
+    <state x="-1920" y="10" key="FileDocumentManager.FileCacheConflict/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598285386345" />
+    <state width="1629" height="188" key="GridCell.Tab.0.bottom" timestamp="1598275477363">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
-    <state width="1664" height="196" key="GridCell.Tab.0.left" timestamp="1598209594439">
+    <state width="1629" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598275477363" />
+    <state width="1629" height="188" key="GridCell.Tab.0.center" timestamp="1598275477363">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
-    <state width="1664" height="196" key="GridCell.Tab.0.right" timestamp="1598209594439">
+    <state width="1629" height="188" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598275477363" />
+    <state width="1629" height="188" key="GridCell.Tab.0.left" timestamp="1598275477363">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1664" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598209594439" />
+    <state width="1629" height="188" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598275477363" />
+    <state width="1629" height="188" key="GridCell.Tab.0.right" timestamp="1598275477363">
+      <screen x="-1920" y="10" width="1920" height="1040" />
+    </state>
+    <state width="1629" height="188" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598275477363" />
     <state x="-1346" y="280" key="IDE.errors.dialog" timestamp="1598039118282">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
@@ -290,6 +308,10 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1319" y="238" width="766" height="560" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598039090227" />
+    <state x="-1259" y="248" key="run.anything.popup" timestamp="1598298295112">
+      <screen x="-1920" y="10" width="1920" height="1040" />
+    </state>
+    <state x="-1259" y="248" key="run.anything.popup/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598298295112" />
     <state x="-1248" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598205403600">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>

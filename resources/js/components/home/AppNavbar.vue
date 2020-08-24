@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
+    <!--<div class="container">-->
         <v-card>
             <v-app-bar
                 absolute
-                color="primary"
+                color="#385F73"
                 dark
             >
                 <!--                <v-app-bar-nav-icon></v-app-bar-nav-icon>-->
@@ -15,12 +15,12 @@
                 <v-spacer></v-spacer>
                 <p class="mt-4 mr-4">{{user.email}}</p>
 
-                <v-btn class="btn-style" v-if="!isLoggedIn">
-                    <router-link class="nav-style" :to="{name:'login'}">Login</router-link>
+                <v-btn class="btn-style" v-if="isLoggedIn">
+                    <router-link class="nav-style" :to="{name:'create'}">Ask Question</router-link>
                 </v-btn>
-               <!-- <v-btn class="btn-style" v-if="!isLoggedIn">
-                    <router-link class="nav-style" :to="{name:'register'}">Register</router-link>
-                </v-btn>-->
+                <v-btn class="btn-style" v-if="isLoggedIn">
+                    <router-link class="nav-style" :to="{name:'register'}">Category</router-link>
+                </v-btn>
                 <v-btn class="btn-style" v-if="isLoggedIn">
                     <a class="nav-style" href="#" @click="logout">Logout</a>
                 </v-btn>
@@ -29,7 +29,7 @@
                  </v-btn>-->
             </v-app-bar>
         </v-card>
-    </div>
+   <!-- </div>-->
 </template>
 
 <script>
@@ -70,6 +70,7 @@ export default {
 <style scoped>
     .nav-style{
         text-decoration: none;
+        color: #9bb1ba;
     }
     .btn-style{
         margin-right: 10px;

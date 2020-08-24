@@ -21,7 +21,7 @@ class LikeController extends Controller
         // Auth::check()
         // Auth::user()
         //$user = new User()
-        dd(Auth::id());
+       // dd(Auth::id());
         $reply->like()->create([
             'user_id' => auth()->id()
             //'user_id' => 12

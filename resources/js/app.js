@@ -7,7 +7,9 @@ import router from "./router/router";
 import vuetify from "./plugins/vuetify";
 import store from './store/index'
 import ValidationErrors from "./shared/components/ValidationErrors";
+import VueSimplemde from "vue-simplemde";
 
+Vue.component('vue-simplemde', VueSimplemde);
 
 Vue.component('validation-errors', ValidationErrors);
 

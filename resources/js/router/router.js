@@ -7,10 +7,15 @@ Vue.use(VueRouter)
 import Home from "../components/home/AppHome";
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
+import Question from "../components/forum/Question";
+import Read from "../components/forum/Read";
+import Create from "../components/forum/Create";
 
 
 const routes = [
     {path:"/", component:Home, name:'home', meta:{requireAuth:true}},
+    {path:"/ask", component:Create, name:'create'},
+    {path:"/question/:id", component: Read, name:"read"},
     {path:"/sign-in", component:Login, name:'login'},
     {path:"/sign-up", component:Register, name:'register'}
 ];

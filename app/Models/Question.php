@@ -18,6 +18,6 @@ class Question extends Model
         return $this->hasMany(Reply::class);
     }
     public function getPathAttribute(){
-        return asset('api/question/' . $this->id);
+        return'question/' . $this->id;
     }
 }
