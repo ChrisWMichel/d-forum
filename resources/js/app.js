@@ -9,6 +9,9 @@ import store from './store/index'
 import ValidationErrors from "./shared/components/ValidationErrors";
 import VueSimplemde from "vue-simplemde";
 
+import marked from 'marked';
+window.marked = marked;
+
 Vue.component('vue-simplemde', VueSimplemde);
 
 Vue.component('validation-errors', ValidationErrors);
@@ -22,7 +25,6 @@ window.axios.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-
 
 const app = new Vue({
     el: '#app',

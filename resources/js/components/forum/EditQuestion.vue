@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-form
-            @submit.prevent = 'create'
+            @submit.prevent = 'update'
         >
             <v-text-field
                 v-model="form.title"
@@ -11,7 +11,7 @@
             ></v-text-field>
             <v-row align="center">
 
-                <v-col cols="12">
+               <!-- <v-col cols="12">
                     <v-autocomplete
                         v-model="form.category_id"
                         :items="categories"
@@ -21,19 +21,24 @@
                         filled
                         label="Select Category"
                     ></v-autocomplete>
-                </v-col>
+                </v-col>-->
             </v-row>
             <vue-simplemde v-model="form.body"  /> <!--ref="markdownEditor"-->
 
 
-
-            <v-btn
-                color="success"
-                class="mr-4"
-                type="submit"
-            >
-                Create
+        <v-card-actions>
+            <v-btn icon medium color="orange"  @click="cancel">
+                <v-icon>mdi-cancel</v-icon>
+                Cancel
             </v-btn>
+            <v-spacer></v-spacer>
+
+            <v-btn icon medium color="teal" type="submit">
+                <v-icon >mdi-content-save</v-icon>
+                Save
+            </v-btn>
+        </v-card-actions>
+
 
         </v-form>
     </v-container>
@@ -41,30 +46,29 @@
 
 <script>
 export default {
-    name: "create",
+    name: "EditQuestion",
+    props:['data'],
     data(){
         return {
-            categories:[],
-            errors:{},
             form:{
                 title: null,
-                category_id: null,
-                body:null
+                body: null
             }
-        };
+        }
+    },
+    mounted(){
+        this.form = this.data;
     },
     created() {
-        axios.get('/api/category')
-            .then(resp => this.categories = resp.data)
-            .catch(error => console.log(error.response.data));
+
     },
     methods:{
-       async create(){
-           const user = this.$store.getters.getUser;
-           this.form.user_id = user.id;
-           await axios.post('/api/question', this.form)
-                .then(resp => this.$router.push(resp.data.path))
-                .catch(error => (this.errors = error.response.data))
+        cancel(){
+            this.$store.commit('isEditing', false);
+        },
+        update(){
+            axios.patch(`/api/question/${this.form.id}`, this.form )
+                .then(resp => this.cancel())
         }
     }
 }

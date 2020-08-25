@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card v-if="user.id">
         <v-container fluid>
             <v-card-title class="headline">
                 {{data.title}}
@@ -8,13 +8,14 @@
             </v-card-title>
             <v-card-subtitle>{{data.user}} Posted {{data.created_at}}</v-card-subtitle>
 <!-- v-html="body"-->
-            <v-card-text v-html="data.body">
+            <v-card-text v-html="body">
             </v-card-text>
             <v-card-actions v-if="user.id === data.user_id">
 
                 <v-btn icon small  @click="editQuestion()">
-                    <v-icon color="orange">mdi-account-edit</v-icon>
+                    <v-icon color="orange">mdi-pencil</v-icon>
                 </v-btn>
+                <v-spacer></v-spacer>
                 <v-btn icon small @click="deleteQuestion()">
                     <v-icon color="red">mdi-delete-forever</v-icon>
                 </v-btn>
@@ -36,14 +37,22 @@ export default {
 
     computed:{
         body(){
-            return marked(this.data.body, {sanitize:true})
+            return marked(this.data.body)
         },
         user(){
             return this.$store.getters.getUser;
         }
     },
     methods:{
-
+        deleteQuestion(){
+            axios.delete(`/api/question/${this.data.id}`)
+                .then(resp => this.$router.push({name:'home'}))
+                .catch(error => console.log(error.response.data))
+        },
+        editQuestion(){
+            this.$store.commit('isEditing', true);
+          //  EventBus.$emit('startEditing')
+        }
     }
 }
 </script>

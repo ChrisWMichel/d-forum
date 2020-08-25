@@ -25,9 +25,12 @@ export default {
             questions:{}
         }
     },
-    created() {
-        axios.get('/api/question')
-        .then(resp => this.questions = resp.data)
+   async created() {
+       await axios.get('/api/question')
+        .then(resp => {
+            this.$store.commit('isEditing', false)
+            this.questions = resp.data
+        })
         .catch(err => console.log('ERROR', err.response.data))
     }
 }
