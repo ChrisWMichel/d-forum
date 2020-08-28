@@ -44,7 +44,6 @@ export default {
     name: "create",
     data(){
         return {
-            categories:[],
             errors:{},
             form:{
                 title: null,
@@ -53,10 +52,10 @@ export default {
             }
         };
     },
-    created() {
-        axios.get('/api/category')
-            .then(resp => this.categories = resp.data)
-            .catch(error => console.log(error.response.data));
+    computed:{
+        categories(){
+            return  this.$store.getters.getCat;
+        }
     },
     methods:{
        async create(){

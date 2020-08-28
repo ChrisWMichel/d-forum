@@ -7,9 +7,8 @@
                 <v-btn color="teal">{{data.reply_count}} replies</v-btn>
             </v-card-title>
             <v-card-subtitle>{{data.user}} Posted {{data.created_at}}</v-card-subtitle>
-<!-- v-html="body"-->
-            <v-card-text v-html="body">
-            </v-card-text>
+
+            <v-card-text v-html="body"></v-card-text>
             <v-card-actions v-if="user.id === data.user_id">
 
                 <v-btn icon small  @click="editQuestion()">
@@ -44,14 +43,13 @@ export default {
         }
     },
     methods:{
-        deleteQuestion(){
-            axios.delete(`/api/question/${this.data.id}`)
+        async deleteQuestion(){
+            await axios.delete(`/api/question/${this.data.id}`)
                 .then(resp => this.$router.push({name:'home'}))
                 .catch(error => console.log(error.response.data))
         },
         editQuestion(){
             this.$store.commit('isEditing', true);
-          //  EventBus.$emit('startEditing')
         }
     }
 }

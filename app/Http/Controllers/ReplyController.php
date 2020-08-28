@@ -16,7 +16,13 @@ class ReplyController extends Controller
      */
     public function index(Question $question)
     {
-        return ReplyResource::collection($question->replies);
+        /*
+         *  This index isn't being used because the replies are being called
+         *  via the Question model with...
+         *  protected $with = ['replies'];
+         */
+        //return ReplyResource::collection($question->replies)->get();
+
     }
 
     /**
@@ -54,7 +60,10 @@ class ReplyController extends Controller
     public function update(Question $question, Request $request, Reply $reply)
     {
         $reply->update($request->all());
-        return response('Updated', Response::HTTP_ACCEPTED);
+
+        //$updated = ReplyResource::collection($question->replies);
+
+        return response('updated', Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -66,6 +75,7 @@ class ReplyController extends Controller
     public function destroy(Question $question, Reply $reply)
     {
         $reply->delete();
-        return response(null, Response::HTTP_NO_CONTENT);
+        $firstReply = ReplyResource::collection($question->replies)->first();
+        return response($firstReply, 201);
     }
 }

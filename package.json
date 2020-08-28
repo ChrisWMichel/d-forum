@@ -10,6 +10,8 @@
     "watch-poll": "npm run watch -- --watch-poll"
   },
   "dependencies": {
+    "carbon-components": "^10.18.0",
+    "moment": "^2.27.0",
     "router": "^1.3.5",
     "vue-router": "^3.4.3",
     "vue-simplemde": "^1.1.2",

@@ -8,7 +8,7 @@ import vuetify from "./plugins/vuetify";
 import store from './store/index'
 import ValidationErrors from "./shared/components/ValidationErrors";
 import VueSimplemde from "vue-simplemde";
-
+//import moment from "moment/moment";
 import marked from 'marked';
 window.marked = marked;
 
@@ -31,10 +31,12 @@ const app = new Vue({
     router,
     vuetify,
     store,
+   // moment,
     components:{
         'index': Index
     },
     async beforeCreate() {
-        this.$store.dispatch('loadUser')
+        this.$store.dispatch('loadUser');
+        this.$store.dispatch('loadCategories')
     }
 });

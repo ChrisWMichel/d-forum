@@ -9,6 +9,8 @@ class Question extends Model
     //protected $guarded = [];
     protected $fillable = ['title', 'body', 'user_id', 'category_id'];
 
+    protected $with = ['replies'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -16,7 +18,7 @@ class Question extends Model
         return $this->belongsTo(Category::class);
     }
     public function replies(){
-        return $this->hasMany(Reply::class);
+        return $this->hasMany(Reply::class)->orderBy('updated_at', 'desc');
     }
     public function getPathAttribute(){
         return'question/' . $this->id;

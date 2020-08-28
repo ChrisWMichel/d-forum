@@ -11,17 +11,6 @@
             ></v-text-field>
             <v-row align="center">
 
-               <!-- <v-col cols="12">
-                    <v-autocomplete
-                        v-model="form.category_id"
-                        :items="categories"
-                        item-value="id"
-                        item-text="name"
-                        dense
-                        filled
-                        label="Select Category"
-                    ></v-autocomplete>
-                </v-col>-->
             </v-row>
             <vue-simplemde v-model="form.body"  /> <!--ref="markdownEditor"-->
 
@@ -53,22 +42,34 @@ export default {
             form:{
                 title: null,
                 body: null
-            }
+            },
+            original: true
         }
     },
     mounted(){
         this.form = this.data;
     },
     created() {
-
+        console.log('created')
+        this.$store.commit('setOriginalQuestion', {'body':this.data.body, 'title':this.data.title})
     },
     methods:{
         cancel(){
+            console.log('original1', this.original);
+            if(this.original){
+                const origin = this.$store.getters.getOriginalQuest;
+                this.form.body = origin.body;
+                this.form.title = origin.title;
+                this.original = true;
+            }
             this.$store.commit('isEditing', false);
         },
         update(){
             axios.patch(`/api/question/${this.form.id}`, this.form )
-                .then(resp => this.cancel())
+                .then(resp => {
+                    this.original = false
+                    this.cancel()
+                })
         }
     }
 }

@@ -18,8 +18,8 @@
                 <v-btn class="btn-style" v-if="isLoggedIn">
                     <router-link class="nav-style" :to="{name:'create'}">Ask Question</router-link>
                 </v-btn>
-                <v-btn class="btn-style" v-if="isLoggedIn">
-                    <router-link class="nav-style" :to="{name:'register'}">Category</router-link>
+                <v-btn class="btn-style" v-if="isLoggedIn && isAdmin">
+                    <router-link class="nav-style" :to="{name:'create-category'}">Category</router-link>
                 </v-btn>
                 <v-btn class="btn-style" v-if="isLoggedIn">
                     <a class="nav-style" href="#" @click="logout">Logout</a>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-//import {mapState} from 'vuex';
+import {mapGetters} from 'vuex';
 export default {
     name: "AppNavbar",
     data(){
@@ -46,12 +46,17 @@ export default {
         //console.log('loggedIn', this.isLoggedIn)
     },
     computed:{
-        user(){
-            return this.$store.getters.getUser
-        },
-        isLoggedIn(){
-            return this.$store.getters.loggedIn
-        }
+        ...mapGetters({
+            user:'getUser',
+            isLoggedIn: 'loggedIn',
+            isAdmin: 'isAdmin'
+        }),
+        // user(){
+        //     return this.$store.getters.getUser
+        // },
+        // isLoggedIn(){
+        //     return this.$store.getters.loggedIn
+        // }
     },
     methods:{
         async logout(){
