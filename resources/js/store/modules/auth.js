@@ -6,7 +6,8 @@ export default{
     state: {
         isLoggedIn:false,
         user:{},
-        isAdmin:false
+        isAdmin:false,
+        userID:null
     },
     getters:{
         //getUser: state => state.user,
@@ -14,7 +15,8 @@ export default{
             return state.user
         },
         loggedIn: state => state.isLoggedIn,
-        isAdmin: state => state.isAdmin
+        isAdmin: state => state.isAdmin,
+        getUserID: state => state.userID
     },
     mutations: {
         setUser(state, payload){
@@ -25,6 +27,9 @@ export default{
         },
         setIsAdmin(state){
             state.isAdmin = true;
+        },
+        setUserID(state, id){
+            state.userID = id
         }
     },
     actions: {
@@ -33,7 +38,7 @@ export default{
                 try{
                     const user = (await axios.get('/user')).data;
                     commit('setUser', user);
-
+                    commit('setUserID', user.id);
                     commit("setLoggedIn", true);
                     if(user.isAdmin === 1){
                         commit('setIsAdmin')

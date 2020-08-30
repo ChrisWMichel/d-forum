@@ -2,9 +2,16 @@
     <v-card class="mx-auto mt-4" v-if="user.id">
 
         <v-card-subtitle class="pb-0">
+
             <div id="title">{{reply.user}}</div>
             <div class="ml-2">said {{reply.updated_at}}</div> <!-- ||reply.created_at-->
+            <v-spacer></v-spacer>
+            <like :reply="reply" class="float-right" v-if="user.id !== reply.user_id"></like>
+            <div class="" style="clear: both"></div>
         </v-card-subtitle>
+
+
+
 
         <v-divider></v-divider>
 
@@ -28,9 +35,10 @@
 
 <script>
 import EditReply from "./editReply";
+import Like from "../like/Like";
 export default {
     name: "replies",
-    components: {EditReply},
+    components: {Like, EditReply},
     props:['reply'],
     data(){
         return {

@@ -4,6 +4,7 @@ import auth from './modules/auth'
 import categories from "./modules/categories";
 import replies from "./modules/replies";
 import questions from "./modules/questions";
+import notifications from "./modules/notifications";
 
 Vue.use(Vuex)
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
         auth,
         categories,
         replies,
-        questions
+        questions,
+        notifications
     }
 })

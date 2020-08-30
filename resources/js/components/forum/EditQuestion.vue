@@ -50,12 +50,10 @@ export default {
         this.form = this.data;
     },
     created() {
-        console.log('created')
         this.$store.commit('setOriginalQuestion', {'body':this.data.body, 'title':this.data.title})
     },
     methods:{
         cancel(){
-            console.log('original1', this.original);
             if(this.original){
                 const origin = this.$store.getters.getOriginalQuest;
                 this.form.body = origin.body;

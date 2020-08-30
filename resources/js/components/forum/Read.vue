@@ -50,6 +50,7 @@ export default {
             // return check;
 
             this.getQuestion()
+            return this.$store.getters.newReply;
         },
         replyObj(){
             return this.$store.getters.getReplies;
@@ -66,7 +67,6 @@ export default {
                this.question = this.replyObj;
                this.$store.commit('clearReplyObj');
            } else {
-               console.log('questID', this.$route.params.id)
                let questID = this.$route.params.id;
                if(questID){
                    await axios.get(`/api/question/${questID}`)

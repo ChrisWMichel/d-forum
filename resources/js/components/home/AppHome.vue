@@ -21,6 +21,7 @@
 <script>
 import Question from "../forum/Question";
 import AppSidebar from "../forum/AppSidebar";
+import {mapGetters} from "vuex";
 export default {
     name: "AppHome",
     components: {AppSidebar, Question},
@@ -30,20 +31,26 @@ export default {
         }
     },
     computed:{
-        loggedIn(){
-            return this.$store.getters.loggedIn
-        }
+        ...mapGetters([
+            'loggedIn',
+            'getUser'
+        ])
     },
    async created() {
+
        await axios.get('/api/question')
         .then(resp => {
             this.$store.commit('isEditing', false)
             this.$store.commit('setNewReply', false);
             this.$store.commit('setEditReply', false);
             this.questions = resp.data
+            this.$store.dispatch('getNotifications');
             //console.log('questions', this.questions);
         })
         .catch(err => console.log('ERROR', err.response.data))
+    },
+    methods:{
+
     }
 }
 </script>

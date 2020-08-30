@@ -15,6 +15,8 @@
                 <v-spacer></v-spacer>
                 <p class="mt-4 mr-4">{{user.email}}</p>
 
+                <app-notification v-if="isLoggedIn"></app-notification>
+
                 <v-btn class="btn-style" v-if="isLoggedIn">
                     <router-link class="nav-style" :to="{name:'create'}">Ask Question</router-link>
                 </v-btn>
@@ -34,8 +36,10 @@
 
 <script>
 import {mapGetters} from 'vuex';
+import AppNotification from "./AppNotification";
 export default {
     name: "AppNavbar",
+    components: {AppNotification},
     data(){
         return {
             //user: this.$store.getters.getUser,

@@ -19,9 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::middleware('auth')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
+//    Route::get('/user/setup-intent', 'UserController@getSetupIntent');
+//});
 
 Route::view('/', 'home');
 Route::view('/{any}', 'home');
