@@ -26,5 +26,6 @@ export default {
         margin:auto;
         /*overflow: auto;*/
         padding: 0 2rem;
+
     }
 </style>

@@ -5,30 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07da62ed-3e62-4e59-8b84-026dfe7d5987" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/NewReplyNotification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_29_151554_create_notifications_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/home/AppNotification.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/like/Like.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/notifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/DeleteReplyEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/LikeEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/QuestionRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/DeleteReplyEventListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/LikeEventListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/0000_00_00_000000_create_websockets_statistics_entries_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/d-forum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/d-forum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ReplyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ReplyResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/NewReplyNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/NewReplyNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forum/EditQuestion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forum/EditQuestion.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forum/Read.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forum/Read.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/home/AppHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/home/AppHome.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/home/AppNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/home/AppNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/category/CreateCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/category/CreateCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forum/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forum/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/home/AppNotification.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/home/AppNotification.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/like/Like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/like/Like.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/reply/replies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reply/replies.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/modules/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +170,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gHhY2IY9VlD9KAxFphSOCG7pfy" />
@@ -171,7 +188,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env&#10;C:/xampp/htdocs/d-forum/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CnC" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -182,6 +199,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -233,7 +251,10 @@
       <workItem from="1598617893461" duration="30420000" />
       <workItem from="1598708803628" duration="22064000" />
       <workItem from="1598792323492" duration="22000" />
-      <workItem from="1598792364681" duration="13035000" />
+      <workItem from="1598792364681" duration="19505000" />
+      <workItem from="1598819424244" duration="2537000" />
+      <workItem from="1598877319483" duration="23331000" />
+      <workItem from="1598963750698" duration="16653000" />
     </task>
     <task id="LOCAL-00001" summary="Completed structure of app.">
       <created>1598039038808</created>
@@ -282,14 +303,18 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1334" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1597783127574" />
+    <state x="-1159" y="211" key="#com.intellij.ide.util.MemberChooser" timestamp="1598888774768">
+      <screen x="-1920" y="10" width="1920" height="1040" />
+    </state>
+    <state x="-1159" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598888774768" />
     <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598207012603">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1210" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598207012603" />
-    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598730459559">
+    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598977472312">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598730459559" />
+    <state x="-1196" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598977472312" />
     <state x="-1342" y="75" key="CommitChangelistDialog2" timestamp="1598632618431">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
@@ -302,38 +327,46 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1920" y="10" key="FileDocumentManager.FileCacheConflict/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598457293396" />
-    <state width="1629" height="199" key="GridCell.Tab.0.bottom" timestamp="1598792575094">
+    <state width="1611" height="187" key="GridCell.Tab.0.bottom" timestamp="1598978733829">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1629" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598792575094" />
-    <state width="1629" height="199" key="GridCell.Tab.0.center" timestamp="1598792575093">
+    <state width="1611" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598978733829" />
+    <state width="1611" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1598972597365" />
+    <state width="1611" height="187" key="GridCell.Tab.0.center" timestamp="1598978733829">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1629" height="199" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598792575093" />
-    <state width="1629" height="199" key="GridCell.Tab.0.left" timestamp="1598792575093">
+    <state width="1611" height="187" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598978733829" />
+    <state width="1611" height="187" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1598972597364" />
+    <state width="1611" height="187" key="GridCell.Tab.0.left" timestamp="1598978733829">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1629" height="199" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598792575093" />
-    <state width="1629" height="199" key="GridCell.Tab.0.right" timestamp="1598792575093">
+    <state width="1611" height="187" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598978733829" />
+    <state width="1611" height="187" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1598972597364" />
+    <state width="1611" height="187" key="GridCell.Tab.0.right" timestamp="1598978733829">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1629" height="199" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598792575093" />
-    <state x="-1346" y="280" key="IDE.errors.dialog" timestamp="1598306888682">
+    <state width="1611" height="187" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598978733829" />
+    <state width="1611" height="187" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1598972597364" />
+    <state x="-1346" y="280" key="IDE.errors.dialog" timestamp="1598880065547">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1346" y="280" key="IDE.errors.dialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598306888682" />
+    <state x="-1346" y="280" key="IDE.errors.dialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598880065547" />
     <state x="-1319" y="238" width="766" height="560" key="Vcs.Push.Dialog.v2" timestamp="1598039090227">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1319" y="238" width="766" height="560" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598039090227" />
-    <state x="-1372" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598650851392">
+    <state x="-1372" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598906694763">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1372" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598650851392" />
+    <state x="-1372" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598906694763" />
     <state x="177" y="31" width="1301" height="946" key="dock-window-1" timestamp="1598453099061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="177" y="31" width="1301" height="946" key="dock-window-1/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598453099061" />
+    <state x="-1121" y="290" key="refactoring.ChangeSignatureDialog" timestamp="1598817615477">
+      <screen x="-1920" y="10" width="1920" height="1040" />
+    </state>
+    <state x="-1121" y="290" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1598817615477" />
     <state x="-1259" y="248" key="run.anything.popup" timestamp="1598298295112">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>

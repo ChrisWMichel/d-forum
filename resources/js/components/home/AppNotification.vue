@@ -10,7 +10,7 @@
             </template>
             <v-list>
                 <v-list-item v-for="notice in getUnreadNotice" :key="notice.id">
-                    <router-link :to="notice.path">
+                    <router-link :to="{name:'read', params:{id:getQuestID}}">
                         <v-list-item-title @click="readNotice(notice)">{{notice.question}}</v-list-item-title>
                     </router-link>
                 </v-list-item>
@@ -35,15 +35,25 @@ export default {
         return {
             notice:true,
             read:[],
-            unread:[]
+            unread:[],
+            sound: 'http://soundbible.com/mp3/sms-alert-1-daniel_simon.mp3'
         }
     },
     computed:{
         ...mapGetters([
             'getUnreadNotice',
             'getReadNotice',
-            'getUser'
+            'getUser',
+            'getQuestID'
         ])
+    },
+    created() {
+        Echo.private(`App.Models.User.${this.getUser.id}`)
+            .notification((notification) => {
+                console.log(notification);
+                this.playSound();
+                this.getUnreadNotice( notification);
+            });
     },
     methods:{
          getNotifications(){
@@ -52,6 +62,7 @@ export default {
         async readNotice(item){
             await axios.post(`/api/markAsRead`, {user:this.getUser, noticeID:item.id})
                 .then(resp => {
+
                     this.$store.dispatch('getNotifications')
                 })
         },
@@ -64,6 +75,10 @@ export default {
                 .then(resp => {
                     this.$store.dispatch('getNotifications')
                 })
+        },
+        playSound(){
+             const alert = new Audio(this.sound);
+             alert.play();
         }
     }
 }

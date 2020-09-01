@@ -6,7 +6,7 @@
             <div id="title">{{reply.user}}</div>
             <div class="ml-2">said {{reply.updated_at}}</div> <!-- ||reply.created_at-->
             <v-spacer></v-spacer>
-            <like :reply="reply" class="float-right" v-if="user.id !== reply.user_id"></like>
+            <like :reply="reply" class="float-right"></like>
             <div class="" style="clear: both"></div>
         </v-card-subtitle>
 
@@ -55,12 +55,16 @@ export default {
         editReply(){
             return this.$store.getters.getEditReply
         },
+        allReplies(){
+            return this.$store.getters.getReplies;
+        }
         // setEditObj(){
         //     this.editObj = this.$store.getters.getEditObj
         // }
     },
     created() {
         this.editObj = null;
+        this.listen();
     },
     methods:{
         async deleteReply(){
@@ -76,6 +80,23 @@ export default {
            // this.$store.commit('setEditReplyObj', reply);
            // this.setEditObj;
             this.$store.commit('setEditReply', true);
+        },
+        listen(){
+            Echo.private('App.Models.User.' + this.user.id)
+                .notification((notification) => {
+                    console.log('notification', notification);
+                    this.$store.dispatch('updateReplies', notification.reply)
+
+                });
+            Echo.channel('deleteReplyChannel')
+                .listen('DeleteReplyEvent', e => {
+
+                    for(let index = 0; index < Object.keys(this.allReplies).length; index++){
+                        if(this.reply[index].id === e.id){
+                            this.reply.splice(index, 1);
+                        }
+                    }
+                })
         }
     }
 }

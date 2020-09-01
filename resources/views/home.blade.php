@@ -8,7 +8,11 @@
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <script src="{{asset('js/app.js')}}" defer></script>
-
+    <style>
+        #app{
+            background-color: rgba(170, 172, 183, 0.28);
+        }
+    </style>
 
 </head>
 <body>

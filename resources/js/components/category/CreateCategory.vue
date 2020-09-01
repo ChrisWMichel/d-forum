@@ -7,8 +7,12 @@
                 type="text"
                 required
             ></v-text-field>
+            <div  v-if="errors">
+                <v-alert type="error" v-for="(error, index) in errors.name" :key="index">{{error}}</v-alert>
+               <!-- <div class="errors" v-for="(error, index) in errors.name" :key="index">{{error}}</div>-->
+            </div>
             <v-btn type="submit" color="pink" v-if="editCategory">Update</v-btn>
-            <v-btn type="submit" color="teal" v-else>Create</v-btn>
+            <v-btn type="submit" color="teal" :disabled="disabled" v-else>Create</v-btn>
 
         </v-form>
         <v-card>
@@ -46,13 +50,16 @@ export default {
             form:{
                 name:null
             },
-            catID:null
-
+            catID:null,
+            errors:[]
         }
     },
     computed:{
         categories(){
             return  this.$store.getters.getCat;
+        },
+        disabled(){
+            return !this.form.name;
         }
     },
     methods:{
@@ -71,12 +78,15 @@ export default {
             this.editCategory = true;
         },
         async addCategory(){
+            this.errors = [];
             if(this.form){
                 await axios.post('/api/category', this.form)
                 .then(resp => {
                     this.form.name = '';
                     this.$store.commit('unshiftCat', resp.data);
-                })
+                }).catch(err => {
+                        this.errors = err.response.data.errors;
+                    })
             }
         },
        async updateCat(){
@@ -93,5 +103,8 @@ export default {
 </script>
 
 <style scoped>
+    .errors{
+        color: red;
+    }
 
 </style>

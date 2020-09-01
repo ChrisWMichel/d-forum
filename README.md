@@ -9,7 +9,7 @@ This app uses Laravel 7.2 and Vue.js 2.5
 - Database is MySQL
 - XAMPP
 - Auth implemented using Sanctum
-- Notification using database, broadcast, and email
+- Notification using Pusher
 
 ## License
 
