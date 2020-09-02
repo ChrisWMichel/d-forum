@@ -13,6 +13,11 @@ class User extends Authenticatable
     //use Notifiable;
     use HasApiTokens, Notifiable;
 
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \App\Notifications\MailResetPasswordNotification($token));
+    }
+
     /**
      * The attributes that are mass assignable.
      *

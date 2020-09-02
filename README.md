@@ -10,6 +10,7 @@ This app uses Laravel 7.2 and Vue.js 2.5
 - XAMPP
 - Auth implemented using Sanctum
 - Notification using Pusher
+- Used SendInBlue for email
 
 ## License
 

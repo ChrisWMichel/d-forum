@@ -10,18 +10,14 @@
                     name="first_name"
                     label="First Name"
                     v-model="user.first_name"
-                    :class="[{'is-invalid': errorFor('first_name')}]"
                 ></v-text-field>
-                <validation-errors :errors="errorFor('first_name')"></validation-errors>
 
                 <v-text-field
                     type="text"
                     name="last_name"
                     label="Last Name"
                     v-model="user.last_name"
-                    :class="[{'is-invalid': errorFor('last_name')}]"
                 ></v-text-field>
-                <validation-errors :errors="errorFor('last_name')"></validation-errors>
 
                 <v-text-field
                     v-model="user.email"

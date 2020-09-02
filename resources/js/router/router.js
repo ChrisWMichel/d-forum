@@ -8,6 +8,8 @@ Vue.use(VueRouter)
 import Home from "../components/home/AppHome";
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
+import ForgotPassword from "../components/auth/ForgotPassword";
+import ResetPasswordForm from "../components/auth/ResetPasswordForm";
 //import Question from "../components/forum/Question";
 import Read from "../components/forum/Read";
 import Create from "../components/forum/Create";
@@ -20,6 +22,8 @@ const routes = [
     {path:"/show-question/:questID", component: Read, name:"read"},
     {path:"/sign-in", component:Login, name:'login'},
     {path:"/sign-up", component:Register, name:'register'},
+    {path:"/reset-password", component:ForgotPassword, name:'forgot', meta:{requireLogin:false}},
+    {path:"/reset-password/:token", component:ResetPasswordForm, name:'reset-password-token', meta:{requireLogin:false}},
     {path:"/create-category", component:CreateCategory, name:'create-category'}
 ];
 

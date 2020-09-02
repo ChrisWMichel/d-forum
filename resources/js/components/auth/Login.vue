@@ -45,7 +45,7 @@
             <br>
             <div class="btnGroup">
                 Forgot Password?
-                <router-link class="font-weight-bold" :to="{}">Reset</router-link><!--name:'reset-password'-->
+                <router-link class="font-weight-bold" :to="{name:'forgot'}">Email Password</router-link><!--name:'reset-password'-->
             </div>
 
         </div>

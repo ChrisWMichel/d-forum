@@ -5,14 +5,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-//Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
-//    Route::get('/user/setup-intent', 'UserController@getSetupIntent');
-//});
-//Auth::routes();
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) { //
-//
-//    return $request->user();
-//});
+// Send reset password mail
+Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+
+// handle reset password form process
+Route::post('reset/password', 'AuthController@callResetPassword');
 
 
 Route::apiResource('/questions', 'QuestionController');
