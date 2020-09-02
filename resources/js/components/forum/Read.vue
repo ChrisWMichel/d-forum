@@ -67,10 +67,12 @@ export default {
                this.question = this.replyObj;
                this.$store.commit('clearReplyObj');
            } else {
-               let questID = this.$route.params.id;
+               let questID = this.$route.params.questID;
                if(questID){
-                   await axios.get(`/api/question/${questID}`)
-                       .then(resp => this.question = resp.data)
+                   await axios.get(`/api/questions/${questID}`)
+                       .then(resp =>{
+                           this.question = resp.data
+                       })
                }
            }
            this.$store.commit('setQuestID', this.$route.params.id)

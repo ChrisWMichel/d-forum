@@ -3,7 +3,7 @@
        class="mt-4"
     >
         <v-card-title class="headline">
-            <router-link class="routeLink" :to="{path:data.path, params:{'id': data.id}}">{{data.title}}</router-link>
+            <router-link class="routeLink" :to="{name:'read', params:{'questID': data.id}}">{{data.title}}</router-link><!---->
         </v-card-title>
 
         <v-card-subtitle class="grey--text" >Asked {{data.created_at}} By {{data.user_name }}</v-card-subtitle>

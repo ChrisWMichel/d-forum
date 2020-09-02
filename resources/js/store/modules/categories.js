@@ -4,11 +4,13 @@ import axios from 'axios'
 export default{
     state: {
         editing:false,
-        categories:{}
+        categories:{},
+        catID:1
     },
     getters: {
         getEdit: state => state.editing,
-        getCat: state => state.categories
+        getCat: state => state.categories,
+        getCatID: state => state.catID
     },
     mutations: {
         isEditing(state, check){
@@ -31,6 +33,9 @@ export default{
                     return cat;
                 }
             })
+        },
+        setCatID(state, id){
+            state.catID = id;
         }
     },
     actions: {

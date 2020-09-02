@@ -6,19 +6,19 @@
 
 
         </v-toolbar>
-        <v-list v-for="category in categories" :key="category.id">
-            <router-link to="">
-                <v-list-item-content class="ml-2">
-                    <v-list-item-title>{{category.name}}</v-list-item-title>
+        <v-list v-for="category in getCat" :key="category.id">
+            <div @click="getCategory(category.id)">
+                <v-list-item-content class="cat-list">
+                    <v-list-item-title :class="category.id === getCatID ? 'catSelected':'' ">{{category.name}}</v-list-item-title>
                 </v-list-item-content>
-            </router-link>
+            </div>
         </v-list>
     </v-card>
 
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex';
 export default {
     name: "AppSidebar",
     data(){
@@ -27,13 +27,33 @@ export default {
         }
     },
     computed:{
-        categories(){
-            return  this.$store.getters.getCat;
+        ...mapGetters([
+            'getCat',
+            'getCatID'
+        ]),
+        // categories(){
+        //     return  this.$store.getters.getCat;
+        // }
+    },
+    methods:{
+        getCategory(id){
+            this.$store.commit('setCatID', id);
+            this.$store.dispatch('allQuestions');
         }
     }
 }
 </script>
 
 <style scoped>
-
+    .catSelected{
+        font-weight: bolder;
+    }
+    .cat-list:hover{
+        cursor: pointer;
+        background-color: rgba(170, 172, 183, 0.28);
+    }
+    .cat-list{
+        width: 100%;
+        padding-left: 10px;
+    }
 </style>

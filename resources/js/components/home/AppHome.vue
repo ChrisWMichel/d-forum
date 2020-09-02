@@ -2,12 +2,15 @@
     <div>
 <!--        <v-container>-->
         <v-layout row wrap v-if="loggedIn">
+
             <v-flex xs8>
+                <div  v-if="Object.keys(getQuestions).length === 0">No questions have been asked yet.</div>
                 <question
-                    v-for="question in questions"
+                    v-for="question in getQuestions"
                     :key="question.id"
                     :data="question"
                 ></question>
+
             </v-flex>
             <v-flex mb1></v-flex>
            <v-flex mb3>
@@ -27,27 +30,21 @@ export default {
     components: {AppSidebar, Question},
     data(){
         return{
-            questions:{}
         }
     },
     computed:{
         ...mapGetters([
             'loggedIn',
-            'getUser'
+            'getUser',
+            'getQuestions'
         ])
     },
    async created() {
-
-       await axios.get('/api/question')
-        .then(resp => {
-            this.$store.commit('isEditing', false)
-            this.$store.commit('setNewReply', false);
-            this.$store.commit('setEditReply', false);
-            this.questions = resp.data
-            this.$store.dispatch('getNotifications');
-            //console.log('questions', this.questions);
-        })
-        .catch(err => console.log('ERROR', err.response.data))
+        console.log('created');
+       this.$store.dispatch('allQuestions');
+       this.$store.commit('isEditing', false)
+       this.$store.commit('setNewReply', false);
+       this.$store.commit('setEditReply', false);
     },
     methods:{
 

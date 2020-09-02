@@ -14,10 +14,11 @@ class QuestionController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
     {
-        // return Question::latest()->get();
-        return QuestionResource::collection(Question::latest()->get());
+
+        return QuestionResource::collection(Question::where('category_id', $request->id)->get());
+
     }
 
     /**

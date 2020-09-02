@@ -17,7 +17,7 @@ import CreateCategory from "../components/category/CreateCategory";
 const routes = [
     {path:"/", component:Home, name:'home', meta:{requireLogin:true}},
     {path:"/ask", component:Create, name:'create'},
-    {path:"/question/:id", component: Read, name:"read"},
+    {path:"/show-question/:questID", component: Read, name:"read"},
     {path:"/sign-in", component:Login, name:'login'},
     {path:"/sign-up", component:Register, name:'register'},
     {path:"/create-category", component:CreateCategory, name:'create-category'}

@@ -10,7 +10,7 @@
             </template>
             <v-list>
                 <v-list-item v-for="notice in getUnreadNotice" :key="notice.id">
-                    <router-link :to="{name:'read', params:{id:getQuestID}}">
+                    <router-link :to="{name:'read', params:{questID:getQuestID}}">
                         <v-list-item-title @click="readNotice(notice)">{{notice.question}}</v-list-item-title>
                     </router-link>
                 </v-list-item>
