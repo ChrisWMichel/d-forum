@@ -22,10 +22,6 @@ Auth::routes();
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-//Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
-//    Route::get('/user/setup-intent', 'UserController@getSetupIntent');
-//});
 
 Route::view('/', 'home');
 Route::view('/{any}', 'home');

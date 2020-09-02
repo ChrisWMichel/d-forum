@@ -41,16 +41,9 @@ export default {
             disabled: false
         }
     },
-    // computed: {
-    //     token() {
-    //         let token = document.head.querySelector('meta[name="csrf-token"]');
-    //         return token.content
-    //     }
-    // },
     methods:{
         async resetPassword(){
             if(this.email){
-              //await axios.post('/password/email', {email:this.email})
               await axios.post('/api/reset-password', {email:this.email})
               .then(resp => {
                   console.log('resp', resp);

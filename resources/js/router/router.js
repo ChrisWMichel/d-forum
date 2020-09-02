@@ -10,7 +10,6 @@ import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 import ForgotPassword from "../components/auth/ForgotPassword";
 import ResetPasswordForm from "../components/auth/ResetPasswordForm";
-//import Question from "../components/forum/Question";
 import Read from "../components/forum/Read";
 import Create from "../components/forum/Create";
 import CreateCategory from "../components/category/CreateCategory";
